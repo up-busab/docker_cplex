@@ -1,0 +1,12 @@
+version: "2.3"
+services:
+
+  run:
+    extends:
+        file: cplex/cplex-runtime.yml
+        service: cplex    
+    volumes:
+        - ../volumes/diet/:/usr/local/workspace/
+    working_dir: /usr/local/workspace/
+    command: python diet.py
+
